@@ -2,14 +2,15 @@ import { useQuery } from "@tanstack/react-query"
 import { useGlobalContext } from "./context"
 import axios from "axios"
 
-const url =
-  "https://api.unsplash.com/search/photos?client_id=due8sbB-0GUds0pGqii7ueVLS_h23FW9-YnJT2FLJbs&query=photographer"
+const url = `https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_API_KEY}`
 
+console.log(import.meta.env.VITE_API_KEY)
 const Gallery = () => {
+  const { searchTerm } = useGlobalContext()
   const response = useQuery({
-    queryKey: ["images"],
+    queryKey: ["images", searchTerm],
     queryFn: async () => {
-      const result = await axios.get(url)
+      const result = await axios.get(`${url}&query=${searchTerm}`)
       return result.data
     },
   })
@@ -24,7 +25,7 @@ const Gallery = () => {
   if (response.isError) {
     return (
       <section className="image-container">
-        <h4>There was an error</h4>
+        <h4>There was an error, please check your connection</h4>
       </section>
     )
   }
@@ -42,14 +43,7 @@ const Gallery = () => {
       <section className="image-container">
         {results.map((item) => {
           const url = item?.urls?.regular
-          return (
-            <img
-              src={url}
-              key={item.id}
-              alt={item.alt_description}
-              className="img"
-            />
-          )
+          return <img src={url} key={item.id} alt={item.alt_description} className="img" />
         })}
       </section>
     </>
