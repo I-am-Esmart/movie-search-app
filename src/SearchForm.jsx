@@ -9,18 +9,17 @@ const SearchForm = () => {
     setSearchTerm(searchValue)
   }
   return (
-    <section>
-      <h1 className="title"> Images </h1>
+    <section className="form-section">
       <form className="search-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          className="form-input search-input"
-          name="search"
-          placeholder="search for anything"
-        />
-        <button type="submit" className="btn">
-          Search
-        </button>
+        <div className="text-wrapper">
+          <h1 className="title"> Search </h1>
+        </div>
+
+        <input type="text" name="search" placeholder="search any movie" />
+
+        <div className="btn-wrapper">
+          <button>Search</button>
+        </div>
       </form>
     </section>
   )

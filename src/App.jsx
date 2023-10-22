@@ -1,13 +1,15 @@
-import Gallery from "./Gallery"
+import Hero from "./Hero/Hero"
+import MovieCard from "./MovieCard"
+import Nav from "./Nav"
 import SearchForm from "./SearchForm"
-import ThemeToggle from "./ThemeToggle"
 
 function App() {
   return (
     <>
-      <ThemeToggle />
+      <Nav />
+      <Hero />
       <SearchForm />
-      <Gallery />
+      <MovieCard />
     </>
   )
 }
