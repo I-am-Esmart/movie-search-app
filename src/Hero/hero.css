@@ -1,5 +1,6 @@
 .hero {
-  background-image: url("https://img.freepik.com/free-vector/cinema-room-background_1017-8728.jpg?w=740&t=st=1698010833~exp=1698011433~hmac=490b0fb27ab7435ec1a44beb735e77b1dcde72981404d65c3250fc78ea40cb1f");
+  /* https://img.freepik.com/free-vector/cinema-room-background_1017-8728.jpg?w=740&t=st=1698010833~exp=1698011433~hmac=490b0fb27ab7435ec1a44beb735e77b1dcde72981404d65c3250fc78ea40cb1f */
+  background-image: url("../assets/Bg\ Img.png");
   background-position: center;
   background-size: cover;
   width: 100%;
